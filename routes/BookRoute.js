@@ -14,7 +14,7 @@ router.get("/:id", async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
     if (!book) {
-      return res.status(404).send("No book found for given id");
+      return res.status(404).send("ID missing from DB");
     }
     res.json(book);
   } catch (error) {
@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const { title, author, summary } = req.body;
-    if (!title.trim() || !author.trim() || !summary.trim()) {
+    if (!title?.trim() || !author?.trim() || !summary?.trim()) {
       return res.status(400).json({ msg: "Please add all fields!" });
     }
     const newBook = {
@@ -43,7 +43,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const { title, author, summary } = req.body;
-    if (!title.trim() || !author.trim() || !summary.trim()) {
+    if (!title?.trim() || !author?.trim() || !summary?.trim()) {
       return res.status(400).json({ msg: "Please add all fields!" });
     }
     const newBook = {
@@ -73,7 +73,7 @@ router.delete("/:id", async (req, res) => {
     if (!book) {
       return res.status(404).json({ error: "Book not found" });
     }
-    res.status(204).json({msg:'succesfully deleted'});
+    res.status(200).json({msg:'succesfully deleted'});
   } catch (error) {
     res.status(500).json({ error: "Failed to delete the book" });
   }
