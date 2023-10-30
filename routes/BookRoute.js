@@ -73,7 +73,7 @@ router.delete("/:id", async (req, res) => {
     if (!book) {
       return res.status(404).json({ error: "Book not found" });
     }
-    res.sendStatus(204).json({msg:'succesfully deleted'});
+    res.status(204).json({msg:'succesfully deleted'});
   } catch (error) {
     res.status(500).json({ error: "Failed to delete the book" });
   }
