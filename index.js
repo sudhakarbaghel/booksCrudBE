@@ -5,10 +5,17 @@ const dotenv = require("dotenv");
 const app = express();
 const port = 5000;
 const cors = require("cors");
-
+const path = require("path");
 app.use(cors());
 dotenv.config();
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '/', 'public')));
+app.get("/", (req, res) => {
+
+  res.sendFile(
+    path.join(__dirname, '/', 'public', 'index.html')
+  );
+});
 
 async function connectToDatabase() {
   try {
