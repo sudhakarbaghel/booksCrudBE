@@ -6,8 +6,8 @@ This is a simple Express.js REST API for managing a collection of books. It allo
 
 You can interact with a live version of this API by visiting [BrewBooks Live](https://brewbooks.vercel.app/).
 
-- Backend Application GitHub Repository: [Backend Repository](booksCrudBE)
-- Frontend Application GitHub Repository: [Frontend Repository](booksCrudFE)
+- Backend Application GitHub Repository: [Backend Repository](https://github.com/sudhakarbaghel/booksCrudBE).
+- Frontend Application GitHub Repository: [Frontend Repository](https://github.com/sudhakarbaghel/booksCrudBE).
 
 
 ## API Endpoints and Usage
